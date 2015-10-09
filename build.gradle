@@ -1,6 +1,8 @@
 apply plugin: 'groovy'
 apply plugin: 'maven'
 
+group='com.bmesta.docker'
+version='1.0.0-SNAPSHOT'
 
 repositories {
     mavenLocal()
