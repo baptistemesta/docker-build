@@ -21,7 +21,7 @@ import org.gradle.api.Project
  */
 class DockerPlugin implements Plugin<Project> {
 
-    static final String PLUGIN_NAME = "bonita-docker"
+    static final String PLUGIN_NAME = "docker-build"
     static final String PLUGIN_TASK_GROUP = PLUGIN_NAME
 
     @Override
