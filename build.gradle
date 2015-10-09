@@ -1,12 +1,44 @@
+plugins {
+    id "com.jfrog.bintray" version "1.3.1"
+}
 apply plugin: 'groovy'
 apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
-group='com.bmesta.docker'
-version='1.0.0-SNAPSHOT'
+
+group = 'com.bmesta.docker'
+version = '1.0.0-SNAPSHOT'
+description = 'Gradle plugin to manage docker images'
 
 repositories {
     mavenLocal()
-    mavenCentral()
+    jcenter()
+}
+bintray {
+    user = 'baptistemesta'
+    key = System.getProperty('bintray.apikey')
+    publications = ['pluginArtifact']
+    pkg {
+        repo = 'maven'
+        name = 'docker-build'
+        licenses = ['LGPL-2.1']
+        vcsUrl = 'http://github.com/bintray/gradle-bintray-plugin.git'
+        labels = ['gradle', 'docker']
+        publicDownloadNumbers = true
+        version {
+            name = project.version
+            desc = project.description
+            vcsTag = project.version
+        }
+    }
+}
+
+publishing {
+    publications {
+        pluginArtifact(MavenPublication) {
+            from components.java
+        }
+    }
 }
 
 dependencies {
@@ -17,4 +49,3 @@ dependencies {
     testCompile 'junit:junit-dep:4.11'
     testCompile 'org.hamcrest:hamcrest-all:1.3'
 }
-
