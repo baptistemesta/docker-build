@@ -1,6 +1,7 @@
 Gradle docker plugin
 ======================
 [ ![Download](https://api.bintray.com/packages/baptistemesta/maven/docker-build/images/download.svg) ](https://bintray.com/baptistemesta/maven/docker-build/_latestVersion)
+[![Join the chat at https://gitter.im/baptistemesta/docker-build](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/baptistemesta/docker-build?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Simple plugin to package docker image
 
