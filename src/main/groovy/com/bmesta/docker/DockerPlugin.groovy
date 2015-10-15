@@ -31,7 +31,7 @@ class DockerPlugin implements Plugin<Project> {
         properties.with {
             dockerBinary = 'docker'
             dockerfileLocation = 'src/main/docker'
-            tag = "${project.name}-${project.version}"
+            tag = "${project.name}"
             saveImageTo = new File(project.buildDir, "${tag}.tar")
         }
         project.ext{
